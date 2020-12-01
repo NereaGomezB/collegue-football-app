@@ -1,10 +1,6 @@
 <template>
     <div>
         <div class="mb-8 justify-center">
-        <!-- <img
-            class="h-32 w-32 mx-auto"
-            :src="selectedItem.logos[0] ? selectedItem.logos[0] : 'https://via.placeholder.com/300'"
-          />-->
           <div class="text-gray-900 font-bold text-xl mb-2 mt-4">{{ selectedItem.id }}</div>
             <div class="text-gray-700 text-base">
               <p class="font-mono">Mascota: {{ selectedItem.mascot ? selectedItem.mascot : 'No hay mascota asignada' }} </p>

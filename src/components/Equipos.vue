@@ -93,13 +93,13 @@ export default {
 
 <template>
   <div class="container">
-    <h1 class="text-2xl font-bold">College football data</h1>
+    <h1 class="text-purple-700 text-opacity-100 text-4xl font-bold">Información sobre equipos de futbol</h1>
     <div class="justify-center flex wx-30 mt-8">
       <input 
         class="rounded p-2" 
         type="text"
         v-model.trim="search"
-        placeholder="Search team by name..."
+        placeholder="Buscar equipo por nombre..."
         @keyup="getAllTeams" />
       <button
         class="bg-grey-500 rounded w-auto flex justify-end items-center p-2 hover:text-blue-light">
@@ -107,9 +107,9 @@ export default {
       </button>
     </div>
 
-    <div class="flex flex-wrap justify-center mt-10">
+    <div class="flex flex-wrap p-4 w-full justify-center mt-10">
       <div
-        class="w-56 h-auto shadow-sm block bg-gray-300 rounded-lg m-4"
+        class="flex flex-row bg-white shadow-sm rounded p-4 h-auto shadow-sm block bg-gray-300 rounded-lg m-4"
         v-for="(equipo, index) in equipos"
         :value="equipo.id"
         :key="index">
