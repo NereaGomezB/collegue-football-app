@@ -70,15 +70,14 @@ export default {
     setFavorite(equipo){
     if(localStorage.getItem('favourites')){
         var storage = JSON.parse(localStorage['favourites']);
-        for (var i = 0; i <= storage.length;i++){
-          if (storage.indexOf(equipo.id) == -1) { 
-            storage.push(equipo.id);
-            document.getElementById(equipo.id).classList.add('fav');
-            localStorage.setItem('favourites', JSON.stringify(storage));
-          } else {
-              document.getElementById(equipo.id).classList.add('fav');
-          }
-        }        
+        if (storage.indexOf(equipo.id) == -1) { 
+          storage.push(equipo.id);
+          document.getElementById(equipo.id).classList.add('fav');
+        } else {
+          storage.splice(storage.indexOf(equipo.id), 1);
+          document.getElementById(equipo.id).classList.remove("fav");             
+        }
+        localStorage.setItem('favourites', JSON.stringify(storage));
       }
       else
       {
@@ -87,12 +86,6 @@ export default {
         document.getElementById(equipo.id).classList.add('fav');
         localStorage.setItem("favourites", JSON.stringify(favArray));
       }
-
-    /** TODO: REMOVE FROM LS 
-        storage.splice(index, 1);
-        document.getElementById(equipo.id).classList.remove("fav");
-        localStorage.setItem('favourites', JSON.stringify(storage));
-      **/
     },
   }
 }
